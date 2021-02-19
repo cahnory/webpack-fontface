@@ -1,0 +1,5 @@
+{
+  "sourceMaps": "inline",
+  "presets": ["@babel/preset-env"],
+  "plugins": ["babel-plugin-source-map-support", "@babel/plugin-transform-runtime"]
+}

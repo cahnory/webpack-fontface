@@ -1,0 +1,91 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "rules": {
+      "description": "A list of rules.",
+      "type": "array",
+      "items": {
+        "description": "A rule.",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "test": {
+            "description": "Handle all modules that match the test." ,
+            "instanceof": "RegExp"
+          },
+          "useEot": {
+            "description": "If eot font should used as @font-face src.",
+            "type": "boolean"
+          },
+          "useSvg": {
+            "description": "If svg font should used as @font-face src.",
+            "type": "boolean"
+          },
+          "useTtf": {
+            "description": "If ttf font should used as @font-face src.",
+            "type": "boolean"
+          },
+          "useWoff": {
+            "description": "If woff font should used as @font-face src.",
+            "type": "boolean"
+          },
+          "useWoff2": {
+            "description": "If woff2 font should used as @font-face src.",
+            "type": "boolean"
+          },
+          "descriptors": {
+            "description": "Descriptors to use instead of or in addition to the one extracted from the font.",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "fontDisplay": {
+                "type": "string"
+              },
+              "fontFamily": {
+                "type": "string"
+              },
+              "fontStretch": {
+                "type": "string"
+              },
+              "fontStyle": {
+                "type": "string"
+              },
+              "fontWeight": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "number"
+                  }
+                ]
+              },
+              "fontVariant": {
+                "type": "string"
+              },
+              "fontFeatureSettings": {
+                "type": "string"
+              },
+              "fontVariationSettings": {
+                "type": "string"
+              }
+            }
+          },
+          "locals": {
+            "description": "A list of font names to look for on the user's computer.",
+            "type": "array",
+            "items": {
+              "description": "A font name to look for on the user's computer.",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "virtualPath": {
+      "description": "The virtual path in which fonts and css files are generated.",
+      "type": "string"
+    }
+  }
+}
