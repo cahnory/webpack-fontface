@@ -99,11 +99,15 @@ export default class WebpackFontface {
 
       if (shouldUpdate) {
         const info = await ttfInfo(content);
-        const subFamily = info.preferredSubFamily
-          .toLowerCase()
-          .replace(/[^a-z]+/gi, '-');
+        const subFamily =
+          (info.preferredSubFamily || info.fontSubFamily)
+            ?.toLowerCase()
+            .replace(/[^a-z]+/gi, '-') || '';
         const stylesheet = path.join(virtualPath, 'stylesheet.css');
-        const fontFamily = rule.descriptors.fontFamily || info.preferredFamily;
+        const fontFamily =
+          rule.descriptors.fontFamily ||
+          info.preferredFamily ||
+          info.fontFamily;
         const fontStyle =
           rule.descriptors.fontStyle || subFamily.match(/\bitalic\b/)
             ? 'italic'

@@ -1,6 +1,6 @@
 {
   "name": "webpack-fontface",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Webpack fontface generator",
   "main": "lib/index.js",
   "author": "Cahnory (https://github.com/cahnory)",
